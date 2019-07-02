@@ -689,3 +689,8 @@ ul.social-buttons li a {
 ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
   background-color: #fed136;
 }
+
+.skill span{
+    border:2px solid #93c; 
+    padding:4px;
+}
