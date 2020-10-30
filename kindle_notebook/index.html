@@ -169,7 +169,7 @@
             text = noteTexts[i];
             var s = heading.innerHTML;
             var hightlightColor = s.split('"')[1];
-            heading.innerHTML = s.slice(s.indexOf('-'));
+            heading.innerHTML = s.slice(s.lastIndexOf('-')); 
             text.classList.add(hightlightColor);
             text.after(document.createElement("hr")); 
         } 
