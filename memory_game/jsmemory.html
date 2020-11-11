@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memory Game</title>
+        <style>
+            #memoryBoard{
+                background-color: #cccccc;
+                width: 800px;
+                height: 640px;
+                border: 4px solid grey;
+                border-radius: 30px;
+                padding:30px;
+                margin: 0px auto;
+            }
+            div div{
+                background: center;
+                background-image: url(hidden.png);
+                background-repeat: no-repeat;
+                background-size: 100px;
+                background-color: whitesmoke;
+                box-shadow: 10px 10px 5px #888888;
+                border-radius: 15px;
+                width: 140px;
+                height: 140px;
+                float: left;
+                margin: 10px;    
+            }
+        </style>
+        <script>
+            var rounds = 0;         // store the total number of played rounds
+            var card_values = [];   // store the image-name of the flipped cards
+            var card_ids = [];      // store the ids of the flipped cards
+            var card_flipped = 0;   // store the total number of flipped cards
+            var cards = [];         // store the image-name of all cards
+            cards[0] = 'ananas.png';
+            cards[1] = 'ananas.png';
+            cards[2] = 'apple.png';
+            cards[3] = 'apple.png';
+            cards[4] = 'banana.png';
+            cards[5] = 'banana.png';
+            cards[6] = 'coconut.png';
+            cards[7] = 'coconut.png';
+            cards[8] = 'kiwi.png';
+            cards[9] = 'kiwi.png';
+            cards[10] = 'melone.png';
+            cards[11] = 'melone.png';
+            cards[12] = 'pear.png';
+            cards[13] = 'pear.png';
+            cards[14] = 'pomelo.png';
+            cards[15] = 'pomelo.png';
+            cards[16] = 'raspberry.png';
+            cards[17] = 'raspberry.png';
+            cards[18] = 'strawberry.png';
+            cards[19] = 'strawberry.png';
+            
+            // shuffel the cards array 
+            function shuffel(array){
+                var random, temp;
+                for(var i = array.length-1; i >= 0; i--){
+                    random = Math.floor(Math.random() * (i+1));
+                    temp = array[random];
+                    array[random] = array[i];
+                    array[i] = temp;
+                }
+                return array;
+            
+            // start a new board wenn window is loaded
+            }
+            function newBoard(){
+                card_flipped = 0;
+                var output = '';
+                cards = shuffel(cards);
+                for(var i = 0; i < cards.length; i++){
+                    output += '<div id="card_' + i + '" onclick="flipCard(this, \'' + cards[i] + '\')"></div>';
+                }
+                // use the output String to create new <div> elements which 
+                // represent the cards
+                document.getElementById("memoryBoard").innerHTML = output;
+            }
+            
+            // function will be called wenn a card is clicked
+            function flipCard(card, img){
+                // wenn the card is not flipped yet and at most 2 cards can be flipped 
+                if(card.style.backgroundImage == '' && card_values.length < 2){
+                    var url = 'url(' + img + ')';     
+                    card.style.backgroundImage = url;  //change the image to flip card
+                    if(card_values.length == 0){       //it's the first card
+                        card_values.push(img);
+                        card_ids.push(card.id);
+                    }
+                    else if(card_values.length == 1){  //it's the second card
+                        rounds++;
+                        card_values.push(img);
+                        card_ids.push(card.id);
+                        if(card_values[0] == card_values[1]){ //two cards match
+                            //function to move the cards out of the board
+                            function moveOut(){
+                                var card_1 = document.getElementById(card_ids[0]);
+                                var card_2 = document.getElementById(card_ids[1]);
+                                card_1.style.backgroundColor = '#cccccc';
+                                card_2.style.backgroundColor = '#cccccc';
+                                card_1.style.backgroundImage = 'none';
+                                card_2.style.backgroundImage = 'none';
+                                card_1.style.boxShadow = 'none';
+                                card_2.style.boxShadow  = 'none';
+                                card_values = [];
+                                card_ids = [];
+                            }
+                            setTimeout(moveOut, 500);
+                            card_flipped +=2;
+                            if(card_flipped == cards.length){ // all cards are flipped
+                                document.getElementById("info").innerHTML = "You did it in " + rounds +" rounds!"
+                            }   
+                        }
+                        else{ //two cards don't match
+                            //function to flip the cards back
+                            function flipBack(){
+                                var card_1 = document.getElementById(card_ids[0]);
+                                var card_2 = document.getElementById(card_ids[1]);
+                                card_1.style.backgroundImage = '';
+                                card_2.style.backgroundImage = '';
+                                card_values = [];
+                                card_ids = [];
+                            }
+                            setTimeout(flipBack, 500);
+                        }
+                    }
+                }   
+            }
+        </script>
+    </head>
+    <body>
+        <div id="memoryBoard"></div> 
+        <p id="info" style = "text-align: center"></p>
+        <script>
+            newBoard();    
+        </script>
+    </body>
+</html>
