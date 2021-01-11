@@ -123,7 +123,7 @@ I have gained knowledge of computer science from various aspects, also with some
             <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
           </span> -->
           <h4 class="service-heading">Java</h4>
-          <p class="text-muted">The first programming language learned in my course. Implemented various algorithms in the course Artificial Intelligence and Algorithms. Implemented simplified games like a chess game and race game and so on.</p>
+          <p class="text-muted">The first programming language learned in my study. Implemented various algorithms in the course Artificial Intelligence and Algorithms. Implemented applications such as chess game, race game and so on.</p>
         </div>
         <div class="col-md-4">
           <!--<span class="fa-stack fa-4x">
@@ -139,7 +139,7 @@ I have gained knowledge of computer science from various aspects, also with some
             <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
           </span> -->
           <h4 class="service-heading">Web Development</h4>
-          <p class="text-muted">Learned various aspects of web development in a course, from front-end to back-end with small projects including static web page, client-side, and server-side dynamic web page.
+          <p class="text-muted">Learned various aspects of web development in the study, from front-end to back-end with small projects including static web page, client-side, and server-side dynamic web page.
           </p>
         </div>
       </div>
@@ -161,6 +161,34 @@ I have gained knowledge of computer science from various aspects, also with some
         </div>
       </div>
       <div class="row">
+          <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalMap">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/Map.png" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Interactive Maps</h4>
+            <p class="text-muted">Java development</p>
+          </div>
+        </div>
+          <div class="col-md-4 col-sm-6 portfolio-item">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal0">
+            <div class="portfolio-hover">
+              <div class="portfolio-hover-content">
+                <i class="fas fa-plus fa-3x"></i>
+              </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/Rails.jpg" alt="">
+          </a>
+          <div class="portfolio-caption">
+            <h4>Ruby on Rails project</h4>
+            <p class="text-muted">Full stack development</p>
+          </div>
+        </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
             <div class="portfolio-hover">
@@ -390,7 +418,72 @@ I have gained knowledge of computer science from various aspects, also with some
   </footer>
 
   <!-- Portfolio Modals -->
-
+    <!-- Modal Map -->
+    <div class="portfolio-modal modal fade" id="portfolioModalMap" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Interactive Maps</h2>
+                <p class="item-intro text-muted">Java Project for Data Visualization.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/Map-full.png" alt="">
+                <p>This is the final project of the course Object Oriented Programming in Java on coursera. Two data visualization maps are built: one map (left) visualizes the earthquakes around the world and one map (right) visualizes the airports their routes. Both maps are interactive. Users can hoove over or click the markers to get more information. See <a href="https://github.com/petra0522/DataVisulizationMaps">Source coude</a>.</p> 
+                <ul class="list-inline">
+                  <li>Date: December 2020</li>
+                  <li>Category: Java Development</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <!-- Modal Rails -->
+    <div class="portfolio-modal modal fade" id="portfolioModal0" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Rails App</h2>
+                <p class="item-intro text-muted">Ruby on Rails project.</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/Rails-full.png" alt="">
+                <p>A demo web application built with Rails, including a COVID-19 tracker, a complete user administration (sign up, sign in, sign out, edit profile), and a Friends List App integrated database management, <a href="https://learnrails22.herokuapp.com/">try it here</a>.</p> 
+                <ul class="list-inline">
+                  <li>Date: December 2020</li>
+                  <li>Category: Full Stack Development</li>
+                </ul>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
   <!-- Modal 1 -->
   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
@@ -507,7 +600,7 @@ I have gained knowledge of computer science from various aspects, also with some
                 <h2 class="text-uppercase">Angular App</h2>
                 <p class="item-intro text-muted">Angular web application.</p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                <p>A web application built with Angular, including Todo List, Sign Up, and more in the future, <a href="https://learnangular-2b22a.web.app/">see it here</a>. </p>
+                <p>A demo web application built with Angular, including Todo List, Sign Up, and more in the future, <a href="https://learnangular-2b22a.web.app/">see it here</a>. </p>
                 <ul class="list-inline">
                   <li>Date: November 2020</li>
                   <li>Category: Web Development</li>
